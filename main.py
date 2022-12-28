@@ -1,6 +1,17 @@
 with open("books/frankenstein.txt") as f:
     contents = f.read()
 
+def main():
+    num_words = wd_ct(contents)
+    print(f"There are {num_words} words found in the document.")
+
+    #print(letter_count(contents))
+
+    keys_list = list(letter_count(contents))
+    values_list = list(letter_count(contents).items())
+    print(f" I am {values_list[0]}")
+    
+
 def wd_ct(words):
     count = len(words.split())
     return count
@@ -90,10 +101,4 @@ def letter_count(words):
             num_letters['z'] += 1
     return num_letters
 
-print(wd_ct(contents))
-
-#print(letter_count(contents))
-
-keys_list = list(letter_count(contents))
-values_list = list(letter_count(contents).items())
-print(f" I am {values_list[0]}")
+main()

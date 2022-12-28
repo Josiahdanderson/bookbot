@@ -4,7 +4,6 @@ with open("books/frankenstein.txt") as f:
 def wd_ct(words):
     count = len(words.split())
     return count
-print(wd_ct(contents))
 
 def letter_count(words):
     lower = words.lower()
@@ -90,8 +89,11 @@ def letter_count(words):
         if word == "z": 
             num_letters['z'] += 1
     return num_letters
+
+print(wd_ct(contents))
+
 #print(letter_count(contents))
 
-list1 = (letter_count(contents).keys())
-print(list1)
-
+keys_list = list(letter_count(contents))
+values_list = list(letter_count(contents).items())
+print(f" I am {values_list[0]}")
